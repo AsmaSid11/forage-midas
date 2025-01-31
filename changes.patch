@@ -1,0 +1,25 @@
+diff --git a/application.yml b/application.yml
+index e69de29..459e7ad 100644
+--- a/application.yml
++++ b/application.yml
+@@ -0,0 +1,19 @@
++spring:
++  kafka:
++    consumer:
++      auto-offset-reset: earliest
++      group-id: midas
++      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
++      properties:
++        spring:
++          json:
++            trusted:
++              packages: "*"
++    producer:
++      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
++server:
++  port: 33400
++
++general:
++  kafka-topic: "transaction"
++  incentive-api-url: "http://localhost:8080/incentive"
+\ No newline at end of file
